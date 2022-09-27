@@ -12,9 +12,9 @@ class Usuario {
         console.log(`Nombre completo: ${this.nombre} ${this.apellido}`);
     };
 
-    addMascota() {
+    addMascota(mascota) {
 
-        this.mascotas.push('Perro')
+        this.mascotas.push(mascota)
 
         console.log(`${this.mascotas}`)
 
@@ -28,49 +28,35 @@ class Usuario {
         
     };
 
-    addBook() {
+    addBook(nombre, autor) {
 
-        const libro1 = [{
-            nombre: "El ultimo Maradona",
-            año: 2014,
-            autor: "Andres Burgo"
-        }]
-
-        this.libros.push(libro1)
+        this.libros.push(`Nombre: ${nombre}, Autor: ${autor}`)
 
         console.log(`${this.libros}`)
     };
 
     getBookNames() {
 
-         
+        const mostrarLibro = (e) => {
+            return e
+        }
+
+         const salida = this.libros.map((mostrarLibro))
+
+         console.log(salida)
 
     }
 
 };
 
-const usuario1 = new Usuario('Diego', 'Maradona', 
-
-                            [ {
-                            nombre: "Yo soy el Diego",
-                            año: 2000,
-                            autor: "Diego Maradona"
-                            },
-
-                            {
-                            nombre: "Mexico 86, como ganamos la Copa",
-                            año: 2016,
-                            autor: "Daniel Arcucci"
-                            }], 
-
-                            ["Gato", "Tortuga"]);
+const usuario1 = new Usuario('Diego', 'Maradona', [], ["Gato", "Tortuga"]);
 
 
 
 usuario1.getFullName();
-usuario1.addMascota();
+usuario1.addMascota("Perro");
 usuario1.countMascotas();
-usuario1.addBook();
+usuario1.addBook("El ultimo 10", "Diego Armando Maradona");
 usuario1.getBookNames();
 
 
